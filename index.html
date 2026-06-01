@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Clone - By Sreeha</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+     <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <h1 class="logo">Zomato Clone</h1>
+            </div>
+            <div class="nav-center">
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Delhi NCR</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search for restaurant, cuisine or a dish">
+                    📋 FILE 1: index.html
+Copy this entire code:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zomato Clone - By Sreeha</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <h1 class="logo">Zomato Clone</h1>
+            </div>
+            <div class="nav-center">
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Delhi NCR</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search for restaurant, cuisine or a dish">
+                </div>
+            </div>
+            <div class="nav-right">
+                <button class="login-btn">
+                    <i class="fas fa-user"></i>
+                    Log in
+                </button>
+                <button class="cart-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">
+            Discover the best food & drinks in <span class="highlight">Delhi NCR</span>
+             </h1>
+        <div class="hero-search">
+            <div class="search-location">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" placeholder="Delhi NCR">
+            </div>
+            <div class="search-input">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search for restaurant, cuisine or a dish">
+            </div>
+        </div>
+        <div class="quick-links">
+            <button class="quick-btn">Order Online</button>
+            <button class="quick-btn">Dining Out</button>
+            <button class="quick-btn">Nightlife & Clubs</button>
+        </div>
+    </section>
+
+    <!-- Food Categories -->
+    <section class="food-categories">
+        <h2 class="section-title">What's on your mind?</h2>
+        <div class="categories-scroll">
+            <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
+            <div class="categories-container">
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400" alt="Pizza">
+                    <p>Pizza</p>
+                </div>
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400" alt="Burger">
+                    <p>Burger</p>
+                </div>
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400" alt="Biryani">
+                    <p>Biryani</p>
+                </div>
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=400" alt="Chinese">
+                    <p>Chinese</p>
+                </div>
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=400" alt="Sandwich">
+                    <p>Sandwich</p>
+                </div>
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400" alt="Pasta">
+                    <p>Pasta</p>
+                </div>
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1626074353765-517a65fbd7c0?w=400" alt="Rolls">
+                    <p>Rolls</p>
+                </div>
+                <div class="category-item">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400" alt="Cake">
+                    <p>Cake</p>
+                </div>
+            </div>
+            <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Top Restaurant Chains -->
+    <section class="top-chains">
+        <h2 class="section-title">Top restaurant chains</h2>
+        <div class="chains-scroll">
+            <button class="scroll-btn left"><i class="fas fa-chevron-left"></i></button>
+            <div class="chains-container">
+                <div class="chain-card">
+                    <div class="chain-image">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600" alt="Domino's">
+                        <div class="chain-name">Domino's Pizza</div>
+                    </div>
+                    <div class="chain-info">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.3</span>
+                        </div>
+                        <span class="time">30-35 mins</span>
+                    </div>
+                    <p class="cuisine">Pizzas, Italian, Pastas</p>
+                </div>
+
+                <div class="chain-card">
+                    <div class="chain-image">
+                        <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600" alt="KFC">
+                        <div class="chain-name">KFC</div>
+                    </div>
+                    <div class="chain-info">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.2</span>
+                        </div>
+                        <span class="time">25-30 mins</span>
+                    </div>
+                    <p class="cuisine">Burgers, Fast Food, Rolls</p>
+                </div>
+
+                <div class="chain-card">
+                    <div class="chain-image">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600" alt="McDonald's">
+                        <div class="chain-name">McDonald's</div>
+                    </div>
+                    <div class="chain-info">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.4</span>
+                        </div>
+                        <span class="time">35-40 mins</span>
+                    </div>
+                    <p class="cuisine">Burgers, Fast Food, Beverages</p>
+                </div>
+
+                <div class="chain-card">
+                    <div class="chain-image">
+                        <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600" alt="Subway">
+                        <div class="chain-name">Subway</div>
+                    </div>
+                    <div class="chain-info">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.1</span>
+                        </div>
+                        <span class="time">30-35 mins</span>
+                    </div>
+                    <p class="cuisine">Healthy Food, Salads, Sandwiches</p>
+                </div>
+
+                <div class="chain-card">
+                    <div class="chain-image">
+                        <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600" alt="Burger King">
+                        <div class="chain-name">Burger King</div>
+                    </div>
+                    <div class="chain-info">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.3</span>
+                        </div>
+                        <span class="time">30-35 mins</span>
+                    </div>
+                    <p class="cuisine">Burgers, American</p>
+                </div>
+
+                <div class="chain-card">
+                    <div class="chain-image">
+                        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600" alt="Pizza Hut">
+                        <div class="chain-name">Pizza Hut</div>
+                    </div>
+                    <div class="chain-info">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.2</span>
+                        </div>
+                        <span class="time">35-40 mins</span>
+                    </div>
+                    <p class="cuisine">Pizzas, Italian</p>
+                </div>
+            </div>
+            <button class="scroll-btn right"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Restaurant Grid -->
+    <section class="restaurant-grid">
+        <h2 class="section-title">Explore restaurants near you</h2>
+        <div class="restaurants-container">
+            <!-- Restaurant Card 1 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600" alt="La Pino'z Pizza">
+                    <span class="promoted-badge">Promoted</span>
+                    <span class="offer-badge"><i class="fas fa-tag"></i> 60% off up to ₹120</span>
+                </div>
+                <div class="restaurant-info">
+                    <h3>La Pino'z Pizza</h3>
+                    <div class="rating-time">
+                        <span class="rating-badge">
+                            <i class="fas fa-star"></i> 4.2
+                        </span>
+                        <span class="rating-count">(5.2K ratings)</span>
+                        <span class="delivery-time">
+                            <i class="far fa-clock"></i> 35-40 mins
+                        </span>
+                    </div>
+                    <p class="cuisine-text">Pizzas, Pastas, Italian, Fast Food</p>
+                    <div class="location-price">
+                        <span>Sector 18, Noida</span>
+                        <span class="price">₹350 for two</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 2 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image">
+                    <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=600" alt="Belgian Waffle">
+                    <span class="offer-badge"><i class="fas fa-tag"></i> 50% off up to ₹100</span>
+                </div>
+                <div class="restaurant-info">
+                    <h3>The Belgian Waffle Co.</h3>
+                    <div class="rating-time">
+                        <span class="rating-badge">
+                            <i class="fas fa-star"></i> 4.5
+                        </span>
+                        <span class="rating-count">(8.1K ratings)</span>
+                        <span class="delivery-time">
+                            <i class="far fa-clock"></i> 30-35 mins
+                        </span>
+                    </div>
+                    <p class="cuisine-text">Desserts, Ice Cream, Beverages</p>
+                    <div class="location-price">
+                        <span>Sector 62, Noida</span>
+                        <span class="price">₹250 for two</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 3 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600" alt="Biryani Blues">
+                    <span class="offer-badge"><i class="fas fa-tag"></i> ₹125 off above ₹299</span>
+                </div>
+                <div class="restaurant-info">
+                    <h3>Biryani Blues</h3>
+                    <div class="rating-time">
+                        <span class="rating-badge">
+                            <i class="fas fa-star"></i> 4.3
+                        </span>
+                        <span class="rating-count">(12K ratings)</span>
+                        <span class="delivery-time">
+                            <i class="far fa-clock"></i> 40-45 mins
+                        </span>
+                    </div>
+                    <p class="cuisine-text">Biryani, Mughlai, North Indian</p>
+                    <div class="location-price">
+                        <span>Greater Noida</span>
+                        <span class="price">₹400 for two</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 4 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image">
+                    <img src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=600" alt="Wow Momo">
+                    <span class="promoted-badge">Promoted</span>
+                    <span class="offer-badge"><i class="fas fa-tag"></i> 50% off up to ₹100</span>
+                </div>
+                <div class="restaurant-info">
+                    <h3>Wow! Momo</h3>
+                    <div class="rating-time">
+                        <span class="rating-badge">
+                            <i class="fas fa-star"></i> 4.4
+                        </span>
+                        <span class="rating-count">(15K ratings)</span>
+                        <span class="delivery-time">
+                            <i class="far fa-clock"></i> 25-30 mins
+                        </span>
+                    </div>
+                    <p class="cuisine-text">Tibetan, Healthy Food, Asian</p>
+                    <div class="location-price">
+                        <span>Sector 18, Noida</span>
+                        <span class="price">₹200 for two</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 5 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600" alt="Burger Singh">
+                    <span class="offer-badge"><i class="fas fa-tag"></i> 60% off up to ₹120</span>
+                </div>
+                <div class="restaurant-info">
+                    <h3>Burger Singh</h3>
+                    <div class="rating-time">
+                        <span class="rating-badge">
+                            <i class="fas fa-star"></i> 4.1
+                        </span>
+                        <span class="rating-count">(6.8K ratings)</span>
+                        <span class="delivery-time">
+                            <i class="far fa-clock"></i> 30-35 mins
+                        </span>
+                    </div>
+                    <p class="cuisine-text">Burgers, Fast Food, Beverages</p>
+                    <div class="location-price">
+                        <span>Sector 50, Noida</span>
+                        <span class="price">₹300 for two</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 6 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600" alt="Barbeque Nation">
+                    <span class="offer-badge"><i class="fas fa-tag"></i> Flat 10% off</span>
+                </div>
+                <div class="restaurant-info">
+                    <h3>Barbeque Nation</h3>
+                    <div class="rating-time">
+                        <span class="rating-badge">
+                            <i class="fas fa-star"></i> 4.0
+                        </span>
+                        <span class="rating-count">(9.5K ratings)</span>
+                        <span class="delivery-time">
+                            <i class="far fa-clock"></i> 45-50 mins
+                        </span>
+                    </div>
+                    <p class="cuisine-text">North Indian, Barbecue, Biryani</p>
+                    <div class="location-price">
+                        <span>Sector 18, Noida</span>
+                        <span class="price">₹1000 for two</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 7 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image">
+                    <img src="https://images.unsplash.com/photo-1626074353765-517a65fbd7c0?w=600" alt="Faasos">
+                    <span class="offer-badge"><i class="fas fa-tag"></i> 50% off up to ₹100</span>
+                </div>
+                <div class="restaurant-info">
+                    <h3>Faasos</h3>
+                    <div class="rating-time">
+                        <span class="rating-badge">
+                            <i class="fas fa-star"></i> 4.2
+                        </span>
+                        <span class="rating-count">(7.2K ratings)</span>
+                        <span class="delivery-time">
+                            <i class="far fa-clock"></i> 30-35 mins
+                        </span>
+                    </div>
+                    <p class="cuisine-text">Wraps, Rolls, Fast Food</p>
+                    <div class="location-price">
+                        <span>Sector 62, Noida</span>
+                        <span class="price">₹200 for two</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Restaurant Card 8 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600" alt="Haldiram's">
+                    <span class="offer-badge"><i class="fas fa-tag"></i> ₹50 off above ₹199</span>
+                </div>
+                <div class="restaurant-info">
+                    <h3>Haldiram's</h3>
+                    <div class="rating-time">
+                        <span class="rating-badge">
+                            <i class="fas fa-star"></i> 4.3
+                        </span>
+                        <span class="rating-count">(18K ratings)</span>
+                        <span class="delivery-time">
+                            <i class="far fa-clock"></i> 35-40 mins
+                        </span>
+                    </div>
+                    <p class="cuisine-text">North Indian, Sweets, South Indian</p>
+                    <div class="location-price">
+                        <span>Sector 18, Noida</span>
+                        <span class="price">₹300 for two</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections -->
+    <section class="collections">
+        <div class="collections-header">
+            <h2 class="section-title">Collections</h2>
+            <button class="explore-btn">Explore all <i class="fas fa-chevron-right"></i></button>
+        </div>
+        <p class="collections-desc">Explore curated lists of top restaurants, cafes, pubs, and bars in Delhi NCR, based on trends</p>
+        
+        <div class="collections-grid">
+            <div class="collection-card">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600" alt="Best of Delhi NCR">
+                <div class="collection-overlay">
+                    <h3>Best of Delhi NCR</h3>
+                    <p>125 Places</p>
+                </div>
+            </div>
+
+            <div class="collection-card">
+                <img src="https://images.pexels.com/photos/18090414/pexels-photo-18090414.jpeg?w=600" alt="Trending">
+                <div class="collection-overlay">
+                    <h3>Trending This Week</h3>
+                    <p>89 Places</p>
+                </div>
+            </div>
+
+            <div class="collection-card">
+                <img src="https://images.pexels.com/photos/31071253/pexels-photo-31071253.jpeg?w=600" alt="Late Night">
+                <div class="collection-overlay">
+                    <h3>Late Night Eats</h3>
+                    <p>64 Places</p>
+                </div>
+            </div>
+
+            <div class="collection-card">
+                <img src="https://images.pexels.com/photos/9001223/pexels-photo-9001223.jpeg?w=600" alt="Pure Veg">
+                <div class="collection-overlay">
+                    <h3>Pure Veg Places</h3>
+                    <p>112 Places</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>COMPANY</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Zomato Blog</a></li>
+                    <li><a href="#">Work With Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>CONTACT</h3>
+                <ul>
+                    <li><a href="#">Help & Support</a></li>
+                    <li><a href="#">Partner with us</a></li>
+                    <li><a href="#">Ride with us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>LEGAL</h3>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>AVAILABLE IN</h3>
+                <ul>
+                    <li>Delhi</li>
+                    <li>Mumbai</li>
+                    <li>Bangalore</li>
+                    <li>Pune</li>
+                    <li>Hyderabad</li>
+                    <li><a href="#" class="see-more">See more</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>SOCIAL LINKS</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Zomato Clone. Educational Project.</p>
+            <div class="developer-credit">
+                Developed by <span class="developer-name">Sreeha</span> - Web Development Project
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
