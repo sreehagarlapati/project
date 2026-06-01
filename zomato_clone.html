@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zomato Clone | Food Delivery App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="zomato_clone.css" />
+</head>
+<body>
+  <header class="hero" id="home">
+    <nav class="navbar">
+      <a class="app-link" href="#app">Get the App</a>
+      <div class="nav-actions">
+        <a href="#collections">Collections</a>
+        <a href="#restaurants">Restaurants</a>
+        <button class="nav-btn ghost" type="button" onclick="openModal('loginModal')">Log in</button>
+        <button class="nav-btn" type="button" onclick="openModal('signupModal')">Sign up</button>
+        <button class="cart-pill" type="button" onclick="openModal('cartModal')">Cart <span id="cartCount">0</span></button>
+        <button class="theme-toggle" type="button" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+      </div>
+    </nav>
+
+    <section class="hero-content">
+      <p class="eyebrow">Food delivery, dining, and discovery</p>
+      <h1 class="brand">zomato</h1>
+      <p class="tagline">Discover the best food and drinks in Hyderabad</p>
+      <div class="search-panel">
+        <div class="location-box">
+          <span>📍</span>
+          <select id="citySelect" aria-label="Choose delivery city">
+            <option>Hyderabad</option>
+            <option>Bengaluru</option>
+            <option>Chennai</option>
+            <option>Mumbai</option>
+            <option>Delhi NCR</option>
+          </select>
+        </div>
+        <div class="search-wrap">
+          <span>🔎</span>
+          <input id="searchInput" type="search" placeholder="Search for biryani, pizza, burger..." oninput="handleSearch(this.value)" autocomplete="off" />
+          <button id="clearSearchBtn" class="clear-btn" type="button" onclick="clearSearch()">×</button>
+          <div id="searchDropdown" class="search-dropdown"></div>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div><strong>500+</strong><span>restaurants</span></div>
+        <div><strong>25 min</strong><span>avg delivery</span></div>
+        <div><strong>4.5★</strong><span>top ratings</span></div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="section quick-options">
+      <div class="section-title">
+        <p class="eyebrow dark">Explore Zomato</p>
+        <h2>What are you craving today?</h2>
+        <p>Order online, book a table, discover nightlife, or pick from curated collections.</p>
+      </div>
+      <div class="option-grid">
+        <article class="option-card" onclick="filterByCategory('delivery')">
+          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80" alt="Pizza on a restaurant table" />
+          <div><h3>Order Online</h3><p>Stay home and get food delivered quickly.</p></div>
+        </article>
+        <article class="option-card" onclick="filterByCategory('dining')">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80" alt="Restaurant interior" />
+          <div><h3>Dining</h3><p>Find restaurants for dinner, dates, and family plans.</p></div>
+        </article>
+        <article class="option-card" onclick="filterByCategory('nightlife')">
+          <img src="https://images.unsplash.com/photo-1532635224-cf024e66d122?auto=format&fit=crop&w=900&q=80" alt="Nightlife drinks" />
+          <div><h3>Nightlife</h3><p>Explore clubs, lounges, and weekend hangouts.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section restaurants-section" id="restaurants">
+      <div class="section-title row">
+        <div>
+          <p class="eyebrow dark">Top picks near you</p>
+          <h2>Popular restaurants</h2>
+          <p id="resultText">Showing all restaurants with live filters and cart controls.</p>
+        </div>
+        <button class="reset-btn" type="button" onclick="resetFilters()">Reset filters</button>
+      </div>
+      <div class="filter-bar" id="filterBar">
+        <button class="chip active" type="button" data-filter="all">All</button>
+        <button class="chip" type="button" data-filter="rating">Rating 4.4+</button>
+        <button class="chip" type="button" data-filter="veg">Pure Veg</button>
+        <button class="chip" type="button" data-filter="offers">Offers</button>
+        <button class="chip" type="button" data-filter="fast">Under 30 mins</button>
+      </div>
+      <div class="sort-row">
+        <label>
+          Sort by
+          <select id="sortSelect" onchange="applyFilters()">
+            <option value="recommended">Recommended</option>
+            <option value="rating">Highest rating</option>
+            <option value="time">Fastest delivery</option>
+            <option value="cost">Lowest cost</option>
+          </select>
+        </label>
+      </div>
+      <div class="restaurant-grid" id="restaurantsGrid"></div>
+    </section>
+
+    <section class="collections" id="collections">
+      <div class="section">
+        <div class="section-title row">
+          <div>
+            <p class="eyebrow dark">Curated lists</p>
+            <h2>Collections</h2>
+            <p>Handpicked places for every mood, plan, and budget.</p>
+          </div>
+          <a class="accent-link" href="#restaurants">Explore all restaurants →</a>
+        </div>
+        <div class="collection-grid">
+          <article class="collection-card">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80" alt="Fine dining table" />
+            <div><h3>Romantic Dining</h3><p>18 places</p></div>
+          </article>
+          <article class="collection-card">
+            <img src="https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=900&q=80" alt="Cafe drinks" />
+            <div><h3>Great Cafes</h3><p>26 places</p></div>
+          </article>
+          <article class="collection-card">
+            <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=900&q=80" alt="Desserts" />
+            <div><h3>Dessert Lovers</h3><p>14 places</p></div>
+          </article>
+          <article class="collection-card">
+            <img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?auto=format&fit=crop&w=900&q=80" alt="Cocktails" />
+            <div><h3>Weekend Nightlife</h3><p>21 places</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-promo" id="app">
+      <div class="app-inner">
+        <div class="phone-preview" aria-hidden="true">
+          <div class="phone-top"></div>
+          <div class="phone-logo">zomato</div>
+          <div class="phone-card"><span>🍛</span><div><strong>Your order is cooking</strong><p>Arriving in 24 minutes</p></div></div>
+          <div class="phone-card"><span>⭐</span><div><strong>Top rated nearby</strong><p>Paradise Biryani • 4.7</p></div></div>
+        </div>
+        <div class="promo-copy">
+          <p class="eyebrow dark">Mobile app</p>
+          <h2>Get the Zomato app</h2>
+          <p>Enter your email and we will send you a download link for quick food delivery and dining offers.</p>
+          <form class="app-form" onsubmit="sendAppLink(event)">
+            <input id="appEmail" type="email" placeholder="Enter your email" required />
+            <button type="submit">Share app link</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><div class="footer-logo">zomato</div><p>Food discovery made simple.</p></div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#restaurants">Restaurants</a>
+        <a href="#collections">Collections</a>
+        <a href="#app">App</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal small">
+      <button class="modal-close" type="button" onclick="closeModal('loginModal')">×</button>
+      <h2>Welcome back</h2>
+      <p class="modal-subtitle">Log in to track your orders and save favorites.</p>
+      <input id="loginEmail" class="field" type="email" placeholder="Email address" />
+      <input id="loginPassword" class="field" type="password" placeholder="Password" />
+      <button class="primary-btn full" type="button" onclick="doLogin()">Log in</button>
+      <button class="social-btn" type="button" onclick="showToast('Google sign in demo started')">Continue with Google</button>
+      <p class="switch-text">New to Zomato? <button type="button" onclick="switchModal('loginModal','signupModal')">Create account</button></p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="signupModal">
+    <div class="modal small">
+      <button class="modal-close" type="button" onclick="closeModal('signupModal')">×</button>
+      <h2>Create account</h2>
+      <p class="modal-subtitle">Join and get personalized recommendations.</p>
+      <input id="signupName" class="field" type="text" placeholder="Full name" />
+      <input id="signupEmail" class="field" type="email" placeholder="Email address" />
+      <input id="signupPassword" class="field" type="password" placeholder="Password" />
+      <button class="primary-btn full" type="button" onclick="doSignup()">Sign up</button>
+      <p class="switch-text">Already have an account? <button type="button" onclick="switchModal('signupModal','loginModal')">Log in</button></p>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="cartModal">
+    <div class="modal wide">
+      <button class="modal-close" type="button" onclick="closeModal('cartModal')">×</button>
+      <h2>Your cart</h2>
+      <p class="modal-subtitle" id="cartSubtitle">Your cart is empty.</p>
+      <div id="cartBody"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal wide">
+      <button class="modal-close" type="button" onclick="closeModal('checkoutModal')">×</button>
+      <h2>Checkout</h2>
+      <div class="checkout-steps">
+        <span id="step1tab" class="active">1 Address</span>
+        <span id="step2tab">2 Payment</span>
+        <span id="step3tab">3 Summary</span>
+        <span id="step4tab">4 Tracking</span>
+      </div>
+      <section class="checkout-step active" id="checkoutStep1">
+        <h3>Choose delivery address</h3>
+        <button class="address-option selected" type="button" onclick="selectAddress(this)">🏠 Home - Madhapur, Hyderabad</button>
+        <button class="address-option" type="button" onclick="selectAddress(this)">🏢 Office - Hitech City, Hyderabad</button>
+        <button class="primary-btn" type="button" onclick="goStep(2)">Continue to payment</button>
+      </section>
+      <section class="checkout-step" id="checkoutStep2">
+        <h3>Select payment method</h3>
+        <button class="payment-option selected" type="button" onclick="selectPayment(this)">💳 UPI / Card</button>
+        <button class="payment-option" type="button" onclick="selectPayment(this)">💵 Cash on delivery</button>
+        <button class="primary-btn" type="button" onclick="goStep(3); renderOrderSummary();">Review order</button>
+      </section>
+      <section class="checkout-step" id="checkoutStep3">
+        <h3>Order summary</h3>
+        <div class="order-summary" id="orderSummaryList"></div>
+        <button class="primary-btn" type="button" onclick="placeOrder()">Place order</button>
+      </section>
+      <section class="checkout-step" id="checkoutStep4">
+        <h3>Live order tracking</h3>
+        <p class="eta-chip" id="etaChip">Preparing your order...</p>
+        <div class="track-line"><span id="trackProgress"></span></div>
+        <div class="tracking">
+          <div class="track-step done" id="ts1">Order placed</div>
+          <div class="track-step" id="ts2">Restaurant accepted</div>
+          <div class="track-step" id="ts3">Out for delivery</div>
+          <div class="track-step" id="ts4">Delivered</div>
+        </div>
+        <button class="secondary-btn" type="button" onclick="resetOrder(); closeModal('checkoutModal')">Finish</button>
+      </section>
+    </div>
+  </div>
+
+  <div id="toastHost" class="toast-host"></div>
+  <script src="zomato_clone.js"></script>
+</body>
+</html>
